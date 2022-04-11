@@ -52,6 +52,28 @@ so header("refresh:2; url=index.php") : it will refresh only 1 time after 2 seco
         - if var_name == null
 		- if false
 		
+7)date(format,timestamp): function formats a timestamp to a more readable date and time : 
+        - format	:Required. Specifies the format of the timestamp
+        - timestamp: Optional. Specifies a timestamp. Default is the current date and time
+
+     Here are some characters that are commonly used for dates:
+
+        d : Represents the day of the month (01 to 31)
+        m : Represents a month (01 to 12)
+        Y : Represents a year (in four digits)
+        l :(lowercase 'L') - Represents the day of the week
+		
+		H : 24-hour format of an hour (00 to 23)
+        h : 12-hour format of an hour with leading zeros (01 to 12)
+        i : Minutes with leading zeros (00 to 59)
+        s : Seconds with leading zeros (00 to 59)
+        a : Lowercase Ante meridiem and Post meridiem (am or pm)
+
+        -Other characters, like"/", ".", or "-" can also be inserted between the characters to add additional formatting.
+    
+8)unlink(filename): to delete image or file 
+        - filename :Required. Specifies the path to the file to delete
+		
 */
 
 //example on implode():
@@ -59,6 +81,15 @@ $arr = array('Hello','World!','Beautiful','Day!');
 echo implode(" ",$arr)."<br>";//Hello World! Beautiful Day!
 
 echo implode("+",$arr)."<br>";//Hello+World!+Beautiful+Day!
+
+
+
+//example on date():
+echo "Today is " . date("Y/m/d") . "<br>";//Today is 2020/11/03
+
+echo "Today is " . date("Y.m.d") . "<br>";//Today is 2020.11.03
+echo "Today is " . date("Y-m-d") . "<br>";//Today is 2020-11-03
+echo "Today is " . date("l");//Today is Tuesday
 
 ?>
 
